@@ -15,8 +15,12 @@
 <body>
     <div id="box"></div>
     <script>
-       document.getElementById('box').style.backgroundColor = 'red';
-       console.log(box);
+        
+       document.getElementById("box").addEventListener('click',function(){
+           document.getElementById("box").style.background = "red";
+           console.log(box);
+       })
+       
     </script>
 </body>
 </html>
