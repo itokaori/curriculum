@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        table {
+            font-size: 1.5em;
+            text-align: center;
+        }
+
+        th, td {
+            padding : 10px;
+        }
+
+    </style>
+</head>
+<body>
+    <select id = "selectbox" onchange="changeLang()">
+        <option id="select" value="select">選択してください</option>
+        <option id="selected_jpn" value="ja">日本語</option>
+        <option id="selected_en" value="en">English</option>
+        <option id="selected_all" value="all">全て表示</option>
+    </select>
+   
+    <table>
+        <tr id="b1">
+            <th>日本</th>
+            <td>こんにちは</td>
+            <td>ありがとう</td>
+            <td>さようなら</td>
+        </tr>
+        <tr id="b2">
+            <th>English</th>
+            <td>Hello</td>
+            <td>Thank you</td>
+            <td>Good Bye</td>
+        </tr>
+    </table>
+        
+    <script>
+     
+     function changeLang() {
+        let sele = document.getElementById('selectbox');
+
+        if(sele.value == "ja") {
+            document.getElementById('b1').style.display="block";
+        }else {
+            document.getElementById('b1').style.display ="none";
+        }
+
+        if(sele.value == "en") {
+            document.getElementById('b2').style.display="block";
+        }else{
+            document.getElementById('b2').style.display="none";
+        }
+
+        if (sele.value == "all") {
+            document.getElementById('b1').style.display = "block";
+            document.getElementById('b2').style.display = "block";
+        }
+     }
+       
+    </script>
+        
+</body>
+</html>
