@@ -1,15 +1,10 @@
 var app = new Vue({
     el: '#app',
     data: {
-        list: [],
+        list: [],               
+        words: ['テスト１', 'テスト２', 'タスク１', 'タスク２', 'サンプル１'],
+       newboxs: [],
         addText: '',
-        word: [
-                {keyword: 'テスト１'},
-                {keyword: 'テスト２'},
-                {keyword: 'タスク１'},
-                {keyword: 'タスク２'},
-                {keyword: 'サンプル１'},
-        ],
         taskName: '',
      },
     //watchでlistの変更を監視
@@ -53,24 +48,15 @@ var app = new Vue({
             return count;
         }
     },
-    computed: {
-        word: function() {
-            var word = [];
-
-            for(var i in this.words) {
-
-                var word = this.words[i];
-
-                if(
-                  word.indexOf(this.keyword) !== -1) {
-                    keyword.push(word);
-
-                }
-
-            }
-
-            return word;
-
-        }
+    taskItems: function() {
+        let a = this.words.indexOf('テスト１');
+        let b = this.words.indexOf('テスト２');
+        let c = this.words.indexOf('タスク１');
+        let d = this.words.indexOf('タスク２');
+        let e = this.words.indexOf('サンプル１');
+        newboxs.push = a,b,c,d,e;
+            
     }
+           
+        
 });
