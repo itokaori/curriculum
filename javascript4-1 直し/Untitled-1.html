@@ -21,10 +21,10 @@
                 <span v-for="word in wordfile">
                     <input type="checkbox" v-for="newbox in newboxs">
                     <li v-if="this.newboxs == this.taskName">{{ taskItems }}</li>
-                    <li v-else-if ='this.taskName.value'>{{ taskItems }}</li>
+                    <li v-else-if ="this.taskName.value">{{ taskItems }}</li>
                 </span>
             </li>
-        
+        </ul>
            
         <p v-show="this.list == ''">現在タスクはありません</p>
     </div>
