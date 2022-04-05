@@ -1,7 +1,7 @@
 var app = new Vue({
     el: '#app',
     data: {
-        list: [],               
+        list: [],         
         addText: '',
      },
     //watchでlistの変更を監視
@@ -33,5 +33,17 @@ var app = new Vue({
                 return !todo.isChecked;
             });
         }
-    }    
+    },
+    computed: {
+        tsk_count: function() {
+            let count = 0;
+            for(let i=0; i < this.list.length; i++) {
+                if(!this.list.isChecked) {
+                    count++;
+                }
+            }
+            return count;
+        }
+    }
+      
 });

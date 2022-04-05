@@ -20,8 +20,8 @@
                 </span>
                 <span v-for="word in wordfile">
                     <input type="checkbox" v-for="newbox in newboxs">
-                    <li v-if="this.newboxs == this.taskName">{{ taskItems }}</li>
-                    <li v-else-if ="this.taskName.value">{{ taskItems }}</li>
+                    <span v-if="this.taskword == this.taskName">{{ taskword }}</span>
+                    <span v-else-if ="!this.taskword == this.taskName">{{ todo.list }}</span>
                 </span>
             </li>
         </ul>
