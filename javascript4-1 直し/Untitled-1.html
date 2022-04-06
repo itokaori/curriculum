@@ -18,10 +18,10 @@
                 <span v-bind:class="{ done: todo.isChecked }">
                     <input type="checkbox" v-model="todo.isChecked">{{ todo.text }}
                 </span>
-                <span v-for="word in wordfile">
-                    <input type="checkbox" v-for="newbox in newboxs">
-                    <span v-if="this.taskword == this.taskName">{{ taskword }}</span>
-                    <span v-else-if ="!this.taskword == this.taskName">{{ todo.list }}</span>
+                <span >
+                    <input type="checkbox" v-for="words in sublist">
+                    <span v-if="arr == this.taskName">{{ sublist }}</span>
+                    <span v-else>{{ todo.list }}</span>
                 </span>
             </li>
         </ul>

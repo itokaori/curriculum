@@ -1,8 +1,16 @@
 var app = new Vue({
     el: '#app',
     data: {
-        list: [],         
+        list: [],
+        words: [
+            {id: 1, keyword: "タスク１"},
+            {id: 2, keyword: "タスク２"},
+            {id: 3, keyword: "テスト１"},
+            {id: 4, keyword: "テスト２"},
+            {id: 5, keyword: "サンプル１"},
+        ],    
         addText: '',
+        taskName: '',
      },
     //watchでlistの変更を監視
     watch: {
@@ -38,12 +46,22 @@ var app = new Vue({
         tsk_count: function() {
             let count = 0;
             for(let i=0; i < this.list.length; i++) {
-                if(!this.list.isChecked) {
+                if(!this.list[i].isChecked) {
                     count++;
                 }
             }
             return count;
         }
-    }
-      
+    },
+    sublist: function() {
+        let arr = [];
+        for(let i = 0; i < this.words.length; i++) {
+            let sub = this.words[i];
+            if(sub.keyword.indexOf(this.taskName) !== -1) {
+                arr.push(sub);
+            }
+        }
+        return arr;
+        }
+   
 });
